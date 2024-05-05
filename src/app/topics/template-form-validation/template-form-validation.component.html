@@ -3,6 +3,7 @@
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="userObj.firstName" class="form-control" minlength="3" required>
       <div class="text-danger" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty) || isFormSubmited" > 
+        <!-- {{firstName.errors | json}} -->
         <span *ngIf="firstName.errors?.['required']">This Is Required</span>
         <span *ngIf="firstName.errors?.['minlength']">Min 3 Charactors Needed</span> 
       </div>
